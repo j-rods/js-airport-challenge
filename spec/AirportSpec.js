@@ -24,6 +24,13 @@ describe("airport", function() {
       airport.land(plane);
       expect(plane.land).toHaveBeenCalled();
     });
+
+    it("plane if not full", function() {
+      for(var i = 0; i < 20; i++) {
+        airport.land(plane);
+      }
+      expect(airport.land(plane)).toThrowError(TypeError, "airport full")
+    });
   });
 
   describe('takeoff', function() {
@@ -37,4 +44,5 @@ describe("airport", function() {
       expect(plane.takeoff).toHaveBeenCalled();
     });
   });
+
 });
