@@ -9,7 +9,8 @@ describe("Plane", function(){
 
   describe("land", function() {
     it('at an airport', function(){
-      expect(plane.land()).toBe(true);
+      plane.land();
+      expect(plane.isFlying).toBe(false);
     });
   });
 });

@@ -3,5 +3,6 @@ function Plane() {
 }
 
 Plane.prototype.land = function() {
-  return true;
+  this.isFlying = false;
 }
+
