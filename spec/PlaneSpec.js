@@ -13,4 +13,11 @@ describe("Plane", function(){
       expect(plane.isFlying).toBe(false);
     });
   });
+  describe('takeoff', function() {
+    it('from an airport', function() {
+      plane.land();
+      plane.takeoff();
+      expect(plane.isFlying).toBe(true);
+    });
+  });
 });
