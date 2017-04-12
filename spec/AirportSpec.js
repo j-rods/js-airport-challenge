@@ -27,9 +27,15 @@ describe("airport", function() {
 
     it("plane if not full", function() {
       for(var i = 0; i < 20; i++) {
-        airport.land(plane);
+        airport.land(plane); // -> "this" is the airport
       }
-      expect(airport.land(plane)).toThrowError(TypeError, "airport full")
+
+      //because airport.land is calling the function immediately,
+      //the result of that function is undefined
+      expect(airport.land(plane)).to
+      expect(function() { //here you are not calling the function immediately, you are wrapping it with another function and then letting jasmine call that function
+        airport.land(plane) //when you call function here
+      }).toThrowError(TypeError, "airport full");
     });
   });
 
